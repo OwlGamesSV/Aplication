@@ -34,3 +34,6 @@ func _physics_process(delta):
 		
 	motion =  move_and_slide(motion,Vector2.UP)
 
+func add_tesis():
+		var TesisCounter = get_tree().get_root().find_node("Camera2D", true, false)
+		TesisCounter.handleTesisCollected()
