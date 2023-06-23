@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/arrow.png-3e8916be13ab5847b8c9fbbf93073bbc.stex"
+path="res://.import/Start-Button-Vector-PNG.png-cc0eb0507cf150ac5eddd87bddb3d330.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Rocky Roads/UI/arrow.png"
-dest_files=[ "res://.import/arrow.png-3e8916be13ab5847b8c9fbbf93073bbc.stex" ]
+source_file="res://Resources/UI/Start-Button-Vector-PNG.png"
+dest_files=[ "res://.import/Start-Button-Vector-PNG.png-cc0eb0507cf150ac5eddd87bddb3d330.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -11,10 +11,7 @@ func _physics_process(delta):
 
 
 
-
-
-
-func _on_Tesis_body_entered(body):
+func _on_Tesis3_body_entered(body):
 	print(body.get_name())
 	
 	if body.get_name() == playerName:
@@ -22,4 +19,3 @@ func _on_Tesis_body_entered(body):
 			print(Ui.tesis)
 			body.add_tesis()
 			queue_free()
-	
