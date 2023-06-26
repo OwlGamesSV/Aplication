@@ -1,14 +1,13 @@
 extends KinematicBody2D
 
 
-const maxSpeed =  50
+const speed =  50
 
 const jumpHeight = -300
-var Touch = false
+var touch = false
 const gravity =   15 
 
 
-onready	var sprite =  $Sprite
 onready var animationPlayer = $AnimationPlayer
 
 var motion = Vector2()
@@ -18,22 +17,26 @@ var motion = Vector2()
 func _input(event):
 		if event is InputEventScreenTouch:
 			if event.pressed == true: 
-				Touch = true 
+				touch = true 
 			else: 
-				Touch = false 
+				touch = false 
 				
 func _physics_process(delta):
 	
 	motion.y += gravity	
-	motion.x = maxSpeed
+	motion.x = speed
 	animationPlayer.play("walk")
 			
 	if is_on_floor():
-		if Touch == true:
+		if touch == true:
 			motion.y = jumpHeight
 		
 	motion =  move_and_slide(motion,Vector2.UP)
 
 func add_tesis():
-		var TesisCounter = get_tree().get_root().find_node("Camera2D", true, false)
-		TesisCounter.handleTesisCollected()
+		var tesisCounter = $Camera2D
+		tesisCounter.handleTesisCollected()
+		
+func player_dead():
+	print("Moriste :P")
+	get_tree().reload_current_scene()

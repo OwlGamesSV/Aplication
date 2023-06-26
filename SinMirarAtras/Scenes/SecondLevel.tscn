@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Rocky Roads/Tilesets/tileset_desert.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/Tesis.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/Tesis2.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/Tesis3.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/studentEnemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -218,6 +219,9 @@ texture = ExtResource( 10 )
 vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Camera2D"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 452, 476 )
 
 [connection signal="body_entered" from="TileMap/Tesis3" to="TileMap/Tesis3" method="_on_Tesis3_body_entered"]
 [connection signal="body_entered" from="TileMap/Tesis2" to="TileMap/Tesis2" method="_on_Tesis2_body_entered"]

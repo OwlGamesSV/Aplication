@@ -1,7 +1,7 @@
 extends Camera2D
 ##Por resolver
 var tesis = 0
-var tesisString = "0"
+
 func _ready():
 	pass
 

@@ -17,10 +17,9 @@ func _ready():
 
 
 func _on_startButton_pressed():
-	get_tree().change_scene("res://Scenes/SecondLevel.tscn")
+	get_tree().change_scene("res://Scenes/levelMenu.tscn")
 
 
 func _on_Exit_pressed():
-	print("pressed")
-
+	get_tree().quit()
 

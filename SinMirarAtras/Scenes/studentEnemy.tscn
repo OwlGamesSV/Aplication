@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/pngegg.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/studentEnemy.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "walk"
+length = 0.35
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2, 3, 4, 6 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27, 58 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 39, 57.5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( -2, 0 )
+script = ExtResource( 2 )
+
+[node name="AnimationEnemy" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/walk = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4, 12 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -2, 0.999992 )
+scale = Vector2( 0.738333, 0.723386 )
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 8
+vframes = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -3, 13 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
