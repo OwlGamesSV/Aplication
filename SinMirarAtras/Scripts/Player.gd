@@ -17,7 +17,8 @@ var motion = Vector2()
 func _input(event):
 		if event is InputEventScreenTouch:
 			if event.pressed == true: 
-				touch = true 
+				if $Camera2D/Pause.pause == false: 
+					touch = true 
 			else: 
 				touch = false 
 				

@@ -19,3 +19,4 @@ func _on_Tesis3_body_entered(body):
 			print(Ui.tesis)
 			body.add_tesis()
 			queue_free()
+
