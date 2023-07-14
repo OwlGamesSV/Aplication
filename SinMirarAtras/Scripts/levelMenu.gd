@@ -19,7 +19,7 @@ func _on_parkingLotButton_pressed():
 
 
 func _on_TouchScreenButton3_pressed():
-	get_tree().change_scene("res://Scenes/SecondLevel.tscn")
+	get_tree().change_scene("res://Scenes/nivel3.tscn")
 
 
 func _on_TouchScreenButton4_pressed():
