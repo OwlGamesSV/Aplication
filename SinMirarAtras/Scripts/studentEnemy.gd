@@ -7,6 +7,7 @@ var movement = Vector2(0,0)
 
 func _ready():
 		$AnimationEnemy.play("walk")
+		visible = false
 
 func _process(delta):
 		movement_character()

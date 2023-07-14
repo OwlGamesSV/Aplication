@@ -37,6 +37,6 @@ position = Vector2( 612, 333 )
 scale = Vector2( 0.212069, 0.173333 )
 normal = ExtResource( 1 )
 
-[connection signal="pressed" from="ContinueButton" to="." method="_on_TouchScreenButton_pressed"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_TouchScreenButton_pressed"]
 [connection signal="pressed" from="ExitMenu" to="." method="_on_ExitMenu_pressed"]

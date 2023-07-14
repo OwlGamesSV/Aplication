@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 
-const speed =  50
+const speed =  80
 
 
-const jumpHeight = -300
+const jumpHeight = -600
 var touch = false
 const gravity =   15 
 
@@ -17,10 +17,11 @@ func _ready():
 	pass
 
 func _input(event):
-		if event is InputEventScreenTouch: 
+		if event is InputEventScreenTouch && $Camera2D/PauseScreen.visible == false: 
 			if event.pressed == true: 
 				if $Camera2D/Pause.pause == false: 
 					touch = true 
+					
 				else:
 					$Camera2D/PauseScreen
 			else: 
@@ -33,7 +34,7 @@ func _physics_process(delta):
 	animationPlayer.play("walk")
 			
 	if is_on_floor():
-		if touch == true:
+		if touch == true :
 			motion.y = jumpHeight
 		
 	motion =  move_and_slide(motion,Vector2.UP)
